@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 import cv2
 import glob
 import shutil
@@ -7,7 +8,8 @@ from roboflow import Roboflow
 from sahi.slicing import slice_image
 
 # --- 1. CONFIGURATION (Constants) ---
-API_KEY = "zelwMR7outflcGYIhkXb"
+load_dotenv()
+API_KEY = os.getenv("ROBOFLOW_API_KEY") # API_KEY = "YOUR_API_KEY"
 WORKSPACE = "bahs-work-space"
 PROJECT = "metal-defect-detection-neu-gc10-bristol-university"
 VERSION = 1
@@ -132,14 +134,3 @@ def run_pipeline():
 if __name__ == "__main__":
     run_pipeline()
     print("\n🚀 SUCCESS: Professional dataset is ready in 'data/processed'!")
-
-# # --- 1. CONFIGURATION (Constants) ---
-# API_KEY = "zelwMR7outflcGYIhkXb"
-# WORKSPACE = "bahs-work-space"
-# PROJECT = "metal-defect-detection-neu-gc10-bristol-university"
-# VERSION = 1
-#
-# API_KEY = "YOUR_API_KEY"
-# WORKSPACE = "workspace-name"
-# PROJECT = "project-name"
-# VERSION = 1
