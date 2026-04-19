@@ -10,8 +10,8 @@ from sahi.slicing import slice_image
 # --- 1. CONFIGURATION (Constants) ---
 load_dotenv()
 API_KEY = os.getenv("ROBOFLOW_API_KEY") # API_KEY = "YOUR_API_KEY"
-WORKSPACE = "bahs-work-space"
-PROJECT = "metal-defect-detection-neu-gc10-bristol-university"
+WORKSPACE = "bahs-work-space" #WORKSPACE = "YOUR_WORKSPACE_NAME"
+PROJECT = "metal-defect-detection-neu-gc10-bristol-university" #PROJECT = 1YOUR_PROJECT_NAME"
 VERSION = 1
 
 # Path Definitions
@@ -32,7 +32,6 @@ def download_from_roboflow():
         rf = Roboflow(api_key=API_KEY)
         project = rf.workspace(WORKSPACE).project(PROJECT)
         version = project.version(VERSION)
-        # Always use yolov8 as it's the most stable text format
         dataset = version.download("yolo26", location=RAW_DATA_DIR)
         return dataset.location
     print("✅ Raw dataset found locally, skipping download.")
