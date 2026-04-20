@@ -12,7 +12,7 @@ load_dotenv()
 API_KEY = os.getenv("ROBOFLOW_API_KEY") # API_KEY = "YOUR_API_KEY"
 WORKSPACE = "bahs-work-space" #WORKSPACE = "YOUR_WORKSPACE_NAME"
 PROJECT = "metal-defect-detection-neu-gc10-bristol-university" #PROJECT = 1YOUR_PROJECT_NAME"
-VERSION = 1
+VERSION = 2
 
 # Path Definitions
 RAW_DATA_DIR = "data/raw"
